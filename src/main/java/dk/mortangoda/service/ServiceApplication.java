@@ -1,4 +1,4 @@
-package dk.mortangoda.srs.service;
+package dk.mortangoda.service;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,8 +14,8 @@ import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import dk.mortangoda.srs.service.filters.AlwaysAcceptApplicationJsonFilter;
-import dk.mortangoda.srs.service.resources.ServicesResource;
+import dk.mortangoda.service.filters.AlwaysAcceptApplicationJsonFilter;
+import dk.mortangoda.service.resources.ExampleResource;
 
 /**
  * Service application.
@@ -28,7 +28,7 @@ public class ServiceApplication extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         HashSet<Class<?>> classes = new HashSet<Class<?>>();
-        classes.add(ServicesResource.class);
+        classes.add(ExampleResource.class);
         classes.add(AlwaysAcceptApplicationJsonFilter.class);
         classes.add(ObjectMapperProvider.class);
         return classes;

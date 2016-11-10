@@ -1,4 +1,4 @@
-package dk.mortangoda.srs.service.filters;
+package dk.mortangoda.service.filters;
 
 import java.io.IOException;
 

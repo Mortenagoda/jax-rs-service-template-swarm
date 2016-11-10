@@ -1,4 +1,4 @@
-package dk.mortangoda.srs.service.resources;
+package dk.mortangoda.service.resources;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.GET;
@@ -12,18 +12,17 @@ import javax.ws.rs.core.Response;
  *
  * @author mortena@gmail.com
  */
-@Path("/services")
+@Path("/example")
 @ApplicationScoped
-public class ServicesResource {
+public class ExampleResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getServices() {
+    public Response get() {
         return Response.ok(new HelloWorld()).build();
     }
 
     private class HelloWorld {
-
         private String hello = "world";
     }
 }
