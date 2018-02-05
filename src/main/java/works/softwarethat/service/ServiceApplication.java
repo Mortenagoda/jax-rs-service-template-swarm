@@ -1,4 +1,4 @@
-package dk.mortangoda.service;
+package works.softwarethat.service;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,8 +14,8 @@ import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import dk.mortangoda.service.filters.AlwaysAcceptApplicationJsonFilter;
-import dk.mortangoda.service.resources.ExampleResource;
+import works.softwarethat.service.filters.AlwaysAcceptApplicationJsonFilter;
+import works.softwarethat.service.resources.ExampleResource;
 
 /**
  * Service application.

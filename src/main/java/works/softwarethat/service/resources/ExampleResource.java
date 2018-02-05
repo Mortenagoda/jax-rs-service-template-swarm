@@ -1,6 +1,9 @@
-package dk.mortangoda.service.resources;
+package works.softwarethat.service.resources;
+
+import works.softwarethat.service.persistence.DatabaseInitializer;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;

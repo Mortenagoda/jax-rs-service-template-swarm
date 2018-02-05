@@ -10,7 +10,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <version.wildfly.swarm>2016.11.0</version.wildfly.swarm>
+        <version.wildfly.swarm>2018.1.0</version.wildfly.swarm>
         <cdi.version>1.2</cdi.version>
         <jax-rs.version>1.0.0.Final</jax-rs.version>
         <slf4j.version>1.7.21</slf4j.version>
@@ -30,13 +30,36 @@
             <artifactId>jboss-jaxrs-api_2.0_spec</artifactId>
             <version>${jax-rs.version}</version>
         </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
         <!-- JEE stuff -->
 
         <!-- Swarm -->
         <dependency>
             <groupId>org.wildfly.swarm</groupId>
             <artifactId>jaxrs</artifactId>
+            <version>${version.wildfly.swarm}</version>
         </dependency>
+        <dependency>
+            <groupId>org.wildfly.swarm</groupId>
+            <artifactId>ejb</artifactId>
+            <version>${version.wildfly.swarm}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.wildfly.swarm</groupId>
+            <artifactId>cdi</artifactId>
+            <version>${version.wildfly.swarm}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.wildfly.swarm</groupId>
+            <artifactId>logging</artifactId>
+            <version>${version.wildfly.swarm}</version>
+        </dependency>
+
         <!-- Swarm -->
 
         <!-- LOGGING -->
@@ -44,16 +67,6 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>${log4j.version}</version>
         </dependency>
         <!-- LOGGING -->
 
@@ -64,6 +77,37 @@
             <version>1.1</version>
         </dependency>
         <!-- SECURITY -->
+
+        <!-- PERSISTENCE -->
+        <!-- MONGODB driver, mongobee for database versioning and morphia for ORM -->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.mongobee</groupId>
+            <artifactId>mongobee</artifactId>
+            <version>0.13</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.mongodb</groupId>
+                    <artifactId>mongo-java-driver</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb.morphia</groupId>
+            <artifactId>morphia</artifactId>
+            <version>1.3.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.mongodb</groupId>
+                    <artifactId>mongo-java-driver</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- PERSISTENCE -->
     </dependencies>
 
     <dependencyManagement>
